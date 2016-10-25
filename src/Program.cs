@@ -15,9 +15,9 @@ namespace MyApp
         {
             Task.Run(async () =>
             {
-                using (var mgr = new UpdateManager(@"I:\src\MyApp\Releases"))
+                using (var mgr = new UpdateManager(@"https://github.com/distantcam/SquirrelTest/releases"))
                 {
-                    await mgr.UpdateApp();
+                    var updateInfo = await mgr.CheckForUpdate();
                 }
             });
 
