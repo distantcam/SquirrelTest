@@ -15,7 +15,7 @@ namespace MyApp
         {
             Task.Run(async () =>
             {
-                using (var mgr = new UpdateManager(@"https://github.com/distantcam/SquirrelTest/releases"))
+                using (var mgr = await UpdateManager.GitHubUpdateManager("https://github.com/distantcam/SquirrelTest"))
                 {
                     var updateInfo = await mgr.CheckForUpdate();
                 }
